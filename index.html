@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html>   
+    <head>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/bootstrap.bundle.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <meta charset="utf-8"/>
+        <title>N2 Engenharia de Software</title>
+    </head>
+    <script>
+            $(document).ready(function() {
+                $('[data-toggle="tooltip"]').tooltip();
+
+                $("#intro, #pt1, #pt2, #pt3, #videos").click(function() {
+                    toggleAbas($(this).attr('id'));
+                });
+
+                $("#menuPraticasXP").click(function(){
+                    console.log($(this).attr('class'));
+                    if($(this).attr('class') =='showDiv'){
+                        $(this).removeClass('showDiv');
+                        $(this).addClass('hideDiv');
+                        $("#imgXP").attr("src","img/remove.png");
+                        $("#praticasXP").toggle();
+                    }
+                    else
+                    {
+                        $(this).removeClass('hideDiv');
+                        $(this).addClass('showDiv');
+                        $("#imgXP").attr("src","img/add.png");
+                        $("#praticasXP").toggle();
+                    }
+                });
+                
+                $("#menuAvaliacaoManifesto").click(function(){
+                    console.log($(this).attr('class'));
+                    if($(this).attr('class') =='showDiv'){
+                        $(this).removeClass('showDiv');
+                        $(this).addClass('hideDiv');
+                        $("#imgManifesto").attr("src","img/remove.png");
+                        $("#avaliacaoManifesto").toggle();
+                    }
+                    else
+                    {
+                        $(this).removeClass('hideDiv');
+                        $(this).addClass('showDiv');
+                        $("#imgManifesto").attr("src","img/add.png");
+                        $("#avaliacaoManifesto").toggle();
+                    }
+                });
+                
+                $("#menuJustificativa").click(function(){
+                    console.log($(this).attr('class'));
+                    if($(this).attr('class') =='showDiv'){
+                        $(this).removeClass('showDiv');
+                        $(this).addClass('hideDiv');
+                        $("#imgJustificativa").attr("src","img/remove.png");
+                        $("#JustificativaNegocio").toggle();
+                    }
+                    else
+                    {
+                        $(this).removeClass('hideDiv');
+                        $(this).addClass('showDiv');
+                        $("#imgJustificativa").attr("src","img/add.png");
+                        $("#JustificativaNegocio").toggle();
+                    }
+                });
+                
+                $("#menuConclusao").click(function(){
+                    console.log($(this).attr('class'));
+                    if($(this).attr('class') =='showDiv'){
+                        $(this).removeClass('showDiv');
+                        $(this).addClass('hideDiv');
+                        $("#imgConclusao").attr("src","img/remove.png");
+                        $("#Conclusao").toggle();
+                    }
+                    else
+                    {
+                        $(this).removeClass('hideDiv');
+                        $(this).addClass('showDiv');
+                        $("#imgConclusao").attr("src","img/add.png");
+                        $("#Conclusao").toggle();
+                    }
+                });
+
+
+                $("#menuIntroducao").click(function(){
+                    console.log($(this).attr('class'));
+                    if($(this).attr('class') =='showDiv'){
+                        $(this).removeClass('showDiv');
+                        $(this).addClass('hideDiv');
+                        $("#imgIntroducao").attr("src","img/remove.png");
+                        $("#Introducao").toggle();
+                    }
+                    else
+                    {
+                        $(this).removeClass('hideDiv');
+                        $(this).addClass('showDiv');
+                        $("#imgIntroducao").attr("src","img/add.png");
+                        $("#Introducao").toggle();
+                    }
+                });
+                
+                $("#menuplanoConcep").click(function(){
+                    console.log($(this).attr('class'));
+                    if($(this).attr('class') =='showDiv'){
+                        $(this).removeClass('showDiv');
+                        $(this).addClass('hideDiv');
+                        $("#imgplanoConcep").attr("src","img/remove.png");
+                        $("#planoConcep").toggle();
+                    }
+                    else
+                    {
+                        $(this).removeClass('hideDiv');
+                        $(this).addClass('showDiv');
+                        $("#imgplanoConcep").attr("src","img/add.png");
+                        $("#planoConcep").toggle();
+                    }
+                });
+                
+                $("#menuCriterioConcep").click(function(){
+                    console.log($(this).attr('class'));
+                    if($(this).attr('class') =='showDiv'){
+                        $(this).removeClass('showDiv');
+                        $(this).addClass('hideDiv');
+                        $("#imgCriterioConcep").attr("src","img/remove.png");
+                        $("#CriterioConcep").toggle();
+                    }
+                    else
+                    {
+                        $(this).removeClass('hideDiv');
+                        $(this).addClass('showDiv');
+                        $("#imgCriterioConcep").attr("src","img/add.png");
+                        $("#CriterioConcep").toggle();
+                    }
+                });
+                
+                $("#menuIntroducaoElaboracao").click(function(){
+                    console.log($(this).attr('class'));
+                    if($(this).attr('class') =='showDiv'){
+                        $(this).removeClass('showDiv');
+                        $(this).addClass('hideDiv');
+                        $("#imgIntroducaoElaboracao").attr("src","img/remove.png");
+                        $("#IntroducaoElaboracao").toggle();
+                    }
+                    else
+                    {
+                        $(this).removeClass('hideDiv');
+                        $(this).addClass('showDiv');
+                        $("#imgIntroducaoElaboracao").attr("src","img/add.png");
+                        $("#IntroducaoElaboracao").toggle();
+                    }
+                });
+                
+                $("#menuPlanoElaboracao").click(function(){
+                    console.log($(this).attr('class'));
+                    if($(this).attr('class') =='showDiv'){
+                        $(this).removeClass('showDiv');
+                        $(this).addClass('hideDiv');
+                        $("#imgPlanoElaboracao").attr("src","img/remove.png");
+                        $("#PlanoElaboracao").toggle();
+                    }
+                    else
+                    {
+                        $(this).removeClass('hideDiv');
+                        $(this).addClass('showDiv');
+                        $("#imgPlanoElaboracao").attr("src","img/add.png");
+                        $("#PlanoElaboracao").toggle();
+                    }
+                });
+
+                $("#menuCriterioElaboracao").click(function(){
+                    console.log($(this).attr('class'));
+                    if($(this).attr('class') =='showDiv'){
+                        $(this).removeClass('showDiv');
+                        $(this).addClass('hideDiv');
+                        $("#imgCriterioElaboracao").attr("src","img/remove.png");
+                        $("#CriterioElaboracao").toggle();
+                    }
+                    else
+                    {
+                        $(this).removeClass('hideDiv');
+                        $(this).addClass('showDiv');
+                        $("#imgCriterioElaboracao").attr("src","img/add.png");
+                        $("#CriterioElaboracao").toggle();
+                    }
+                });
+                
+                $("#menuIntroducaoConstrucao").click(function(){
+                    console.log($(this).attr('class'));
+                    if($(this).attr('class') =='showDiv'){
+                        $(this).removeClass('showDiv');
+                        $(this).addClass('hideDiv');
+                        $("#imgIntroducaoConstrucao").attr("src","img/remove.png");
+                        $("#IntroducaoConstrucao").toggle();
+                    }
+                    else
+                    {
+                        $(this).removeClass('hideDiv');
+                        $(this).addClass('showDiv');
+                        $("#imgIntroducaoConstrucao").attr("src","img/add.png");
+                        $("#IntroducaoConstrucao").toggle();
+                    }
+                });
+
+                                
+                $("#menuPlanoConstrucao").click(function(){
+                    console.log($(this).attr('class'));
+                    if($(this).attr('class') =='showDiv'){
+                        $(this).removeClass('showDiv');
+                        $(this).addClass('hideDiv');
+                        $("#imgPlanoConstrucao").attr("src","img/remove.png");
+                        $("#PlanoConstrucao").toggle();
+                    }
+                    else
+                    {
+                        $(this).removeClass('hideDiv');
+                        $(this).addClass('showDiv');
+                        $("#imgPlanoConstrucao").attr("src","img/add.png");
+                        $("#PlanoConstrucao").toggle();
+                    }
+                });
+                          
+                $("#menuCriterioConstrucao").click(function(){
+                    console.log($(this).attr('class'));
+                    if($(this).attr('class') =='showDiv'){
+                        $(this).removeClass('showDiv');
+                        $(this).addClass('hideDiv');
+                        $("#imgCriterioConstrucao").attr("src","img/remove.png");
+                        $("#CriterioConstrucao").toggle();
+                    }
+                    else
+                    {
+                        $(this).removeClass('hideDiv');
+                        $(this).addClass('showDiv');
+                        $("#imgCriterioConstrucao").attr("src","img/add.png");
+                        $("#CriterioConstrucao").toggle();
+                    }
+                });
+                     
+                $("#menuIntroducaoTransicao").click(function(){
+                    console.log($(this).attr('class'));
+                    if($(this).attr('class') =='showDiv'){
+                        $(this).removeClass('showDiv');
+                        $(this).addClass('hideDiv');
+                        $("#imgIntroducaoTransicao").attr("src","img/remove.png");
+                        $("#IntroducaoTransicao").toggle();
+                    }
+                    else
+                    {
+                        $(this).removeClass('hideDiv');
+                        $(this).addClass('showDiv');
+                        $("#imgIntroducaoTransicao").attr("src","img/add.png");
+                        $("#IntroducaoTransicao").toggle();
+                    }
+                });
+                
+                $("#menuPlanoTransicao").click(function(){
+                    console.log($(this).attr('class'));
+                    if($(this).attr('class') =='showDiv'){
+                        $(this).removeClass('showDiv');
+                        $(this).addClass('hideDiv');
+                        $("#imgPlanoTransicao").attr("src","img/remove.png");
+                        $("#PlanoTransicao").toggle();
+                    }
+                    else
+                    {
+                        $(this).removeClass('hideDiv');
+                        $(this).addClass('showDiv');
+                        $("#imgPlanoTransicao").attr("src","img/add.png");
+                        $("#PlanoTransicao").toggle();
+                    }
+                });
+                                
+                $("#menuCriterioTransicao").click(function(){
+                    console.log($(this).attr('class'));
+                    if($(this).attr('class') =='showDiv'){
+                        $(this).removeClass('showDiv');
+                        $(this).addClass('hideDiv');
+                        $("#imgCriterioTransicao").attr("src","img/remove.png");
+                        $("#CriterioTransicao").toggle();
+                    }
+                    else
+                    {
+                        $(this).removeClass('hideDiv');
+                        $(this).addClass('showDiv');
+                        $("#imgCriterioTransicao").attr("src","img/add.png");
+                        $("#CriterioTransicao").toggle();
+                    }
+                });
+
+
+                function toggleAbas(abaAtiva){
+                    console.log(abaAtiva);
+                    $("#divintro").css('display','none');
+                    $("#divpt1").css('display','none');
+                    $("#divpt2").css('display','none');
+                    $("#divpt3").css('display','none');
+                    $("#divvideos").css('display','none');
+
+                    $("#div" + abaAtiva).css('display','block');
+                }
+                
+                $("#navConcepcao, #navElaboracao, #navConstrucao, #navTransicao").click(function(){
+                    console.log($(this).attr('id'));
+                    
+                     $("#concepcao").css('display','none');
+                     $("#elaboracao").css('display','none');
+                     $("#construcao").css('display','none');
+                     $("#transicao").css('display','none');
+
+                     $("#navConcepcaoLink").removeClass('active');
+                     $("#navElaboracaoLink").removeClass('active');
+                     $("#navConstrucaoLink").removeClass('active');
+                     $("#navTransicaoLink").removeClass('active');
+                     
+                     $($(this).attr('id') + "Link").addClass('active')
+                    
+                    if($(this).attr('id') == 'navConcepcao')
+                        $("#concepcao").css('display','block');
+                    if($(this).attr('id') == 'navElaboracao')
+                        $("#elaboracao").css('display','block');
+                    if($(this).attr('id') == 'navConstrucao')
+                        $("#construcao").css('display','block');
+                    if($(this).attr('id') == 'navTransicao')
+                        $("#transicao").css('display','block');
+
+                    
+                });
+
+                $('#btnDownload').click(function(e) {
+                    e.preventDefault();  //stop the browser from following
+                    window.location.href = 'docs/n2Engenharia.docx';
+                });
+
+
+            });
+        </script>
+    <body style="background-color: white;">
+       <div class="app">
+            <img src="img/logo.png" style="margin-left: 2%;margin-bottom: 2%;">
+         <div id="form" style="color:white; background-color: #0f5590;width: 100%;height: 20%;">
+            <div style="text-align: center;"> 
+                <br/>
+                    <h5>N2 - Engenharia de Software - EC7</h5>
+            </div>          
+            <div id="menu" style="margin-left: 2%; margin-bottom: 1%; margin-top:1%;text-align: center;">
+                    <button id="intro" type="button" class="btn btn-warning" style="color: white;margin-right: 2%;"><b>Introdução</b></button>
+                    
+                    <button id="pt1" type="button" class="btn btn-warning" style="color: white;margin-right: 2%;"><b>Parte 1</b></button>
+                    
+                    <button id="pt2" type="button" class="btn btn-warning" style="color: white;margin-right: 2%;"><b>Parte 2</b></button>
+                    
+                    <button id="pt3" type="button" class="btn btn-warning" style="color: white;margin-right: 2%;"><b>Parte 3</b></button>
+                    
+                    <button id="videos" type="button" class="btn btn-warning" style="color: white;margin-right: 2%;"><b>Vídeos</b></button>                    
+            </div>
+           </div>
+           <div id="divintro" style="display:block; margin-left: 2%;">
+                <h4><span class="badge badge-secondary">Introdução</span></h4><br/>
+               <p>
+                    O trabalho está dividido em 3 partes:
+               </p>            
+               <p>
+                   <b>Parte 1</b>
+                   <ul>
+                       <li>Plano de 4 iterações - Concepção, Elaboração, Construção e Transição</li>
+                   </ul>                   
+               </p>            
+               <p>
+                   <b>Parte 2</b>
+                   <ul>
+                       <li>Plano de Práticas do XP</li>
+                       <li>Avaliação de resultados de acordo com Manifesto Ágil</li>
+                   </ul>                   
+               </p>            
+               <p>
+                   <b>Parte 3</b>
+                   <ul>
+                       <li>Justificativa de negócio para o processo de desenvolvimento</li>
+                       <li>Conclusão</li>
+                   </ul>                   
+               </p>
+
+               <p>
+                   <i>Para acessar as partes do projeto favor navegar nas abas do menu ou baixar o documento do projeto clicando no botão abaixo.</i>
+                   <br/>
+                   <button type="button" id="btnDownload" class="btn btn-primary" style="margin-top:2%; ">Download do Documento</button>
+               </p>
+            </div>            
+           <div id="divpt1" style="display:none; margin-left: 2%;">
+                <h4><span class="badge badge-secondary">Parte 1</span></h4><br/>
+                <div id="tabs">
+                    <ul class="nav nav-tabs">
+                            <li id="navConcepcao" class="nav-item"><a id="navConcepcaoLink" class="nav-link active" href="#">Concepção</a></li>
+                            <li id="navElaboracao" class="nav-item"><a id="navElaboracaoLink" class="nav-link" href="#">Elaboração</a></li>
+                            <li id="navConstrucao" class="nav-item"><a id="navConstrucaoLink" class="nav-link" href="#">Construção</a></li>
+                            <li id="navTransicao" class="nav-item"><a id="navTransicaoLink" class="nav-link" href="#">Transição</a></li>
+                    </ul>          
+                </div> 
+                <div id="concepcao" style="display:block; margin-top: 3%;">
+                    <p><center><h1>Plano de iterações - Concepção</h1></center></p>
+                    <hr/>
+                    <br/>
+                    <div id="menuIntroducao" class="hideDiv">                        
+                            <p>
+                                <H2><center><img id="imgIntroducao" src="img/remove.png" style="margin-left: 2%;margin-right: 1%;margin-bottom: 2%;margin-top: 1.5%;width: 20px;"><b>1. Introdução</b></center></H2>
+                            </p>
+                         </div>
+                        <br/>
+                    <div id="Introducao">
+                        <p><h3>1.1.	Propósito</h3></p>
+                        <p>O propósito deste documento é reunir todas as informações necessárias para iniciar o desenvolvimento de um protótipo de software de fluxo de entrada de pedidos e saída de produtos. Durante essa iteração os requerimentos do sistema serão definidos e um plano de execução de alto nível de todo o projeto deve ser elaborado. Essa primeira iteração irá conduzir as análises dos casos de negócio para prosseguimento do projeto.</p>
+                        <p><h3>1.2.	Escopo</h3></p>
+                        <p>Este documento desenvolvido se aplica ao desenvolvimento de um software com fluxo de entrada de pedidos e saída de produtos. O gerente de projeto e a equipe de desenvolvimento se baseará nesse documento ao longo do processo de desenvolvimento do sistema.</p>
+
+                     </div>
+                     <br/>
+                     <div id="menuplanoConcep" class="hideDiv">                        
+                            <p>
+                                <H2><center><img id="imgplanoConcep" src="img/remove.png" style="margin-left: 2%;margin-right: 1%;margin-bottom: 2%;margin-top: 1.5%;width: 20px;"><b>2. Plano</b></center></H2>
+                            </p>
+                         </div>
+                        <br/>
+                     <div id="planoConcep">
+                        <p>Essa iteração inicial esclarecerá os requerimentos do projeto e estabelecerá os casos de negócio para o sistema de pedidos. Ao final desta iteração será decidido qual funcionalidade será priorizada no desenvolvimento e por qual caminho o software será desenvolvido como um todo.</p>
+                        <p>
+                            <table border="2" style="margin-right: 2%">
+                                <thead style="background-color:lightsteelblue">
+                                    <th><center>Atividade</center></th>
+                                    <th><center>Início</center></th>
+                                    <th><center>Fim</center></th>
+                                    <th><center>Duração</center></th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td width="30%">Concepção</td>
+                                        <td>Imediato após pedido do cliente</td>
+                                        <td>21 dias após o pedido</td>
+                                        <td width="10%">21 dias</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fase inicial de concepção </td>
+                                        <td>Imediato após pedido do cliente</td>
+                                        <td>2 dias após início da concepção</td>
+                                        <td>2 dias</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Definir ferramentas de desenvolvimento (criação de tarefas);
+                                                Definir controle de mudanças;                                         </td>
+                                        <td>Após término da atividade inicial de concepção</td>
+                                        <td>3 dias após início da concepção</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Revisão das atividades descritas</td>
+                                        <td>Após término da atividade de definição de ferramentas e controle de mudanças</td>
+                                        <td>4 dias após início da concepção</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reunião de inicial (definições básicas)</td>
+                                        <td>Após término da atividade de revisão das atividades descritas</td>
+                                        <td>5 dias após início da concepção</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Desenvolvimento dos entregáveis </td>
+                                        <td>Após término da atividade inicial da concepção do projeto</td>
+                                        <td>13 dias após início da concepção</td>
+                                        <td>8 dias</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Coleta de requisitos</td>
+                                        <td>Imediato após reunião inicial</td>
+                                        <td>6 dias após início da concepção do projeto</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Visão do projeto criada e revisada</td>
+                                        <td>Imediato após reunião inicial</td>
+                                        <td>7 dias após início da concepção</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Desenvolvimento dos casos de uso preliminares e inseridos no controle de revisão</td>
+                                        <td>Após término da atividade de criar visão do projeto</td>
+                                        <td>9 dias após início da concepção</td>
+                                        <td>2 dias</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pesquisa de caso de uso criada e revisada</td>
+                                        <td>Após desenvolvimento dos casos de uso preliminares</td>
+                                        <td>10 dias após início da concepção</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Especificações suplementares criadas e revisadas; </td>
+                                        <td>Após pesquisa de casos de uso</td>
+                                        <td>11 dias após início da concepção</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Caso de negócio criado e revisado</td>
+                                        <td>Após pesquisa de casos de uso</td>
+                                        <td>11 dias após início da concepção</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vocabulário do projeto coletado e revisado</td>
+                                        <td>Após pesquisa de casos de uso</td>
+                                        <td>11 dias após início da concepção</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Design criado e revisado</td>
+                                        <td>Após reunião inicial da concepção</td>
+                                        <td>6 dias após início da concepção </td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mockup da interface com o usuário criada e revisada</td>
+                                        <td>Após reunião inicial da concepção</td>
+                                        <td>6 dias após início da concepção</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Plano de transferência de conteúdo e programação criada e revisada</td>
+                                        <td>Após coleta de vocabulário do projeto</td>
+                                        <td>12 dias após início da concepção</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Validar se o projeto vai atender as necessidades</td>
+                                        <td>Após plano de transferência de conteúdo criado e revisado</td>
+                                        <td>13 dias após início da concepção</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Finalização do entregáveis</td>
+                                        <td>Após validação e assinatura do projeto</td>
+                                        <td>13 dias após início da concepção</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aplicação dos objetos desenvolvidos na concepção</td>
+                                        <td>Após finalização dos entregáveis</td>
+                                        <td>Após finalização dos entregáveis</td>
+                                        <td>8 dias</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reunião de verificação de qualidade</td>
+                                        <td>Após finalização dos entregáveis</td>
+                                        <td>13 dias após início da concepção</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Realizar garantia da qualidade</td>
+                                        <td>Após reunião de verificação de qualidade</td>
+                                        <td>14 dias após início da concepção</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Primeiras estimativas criadas e revisadas</td>
+                                        <td>Após realizar a garantia da qualidade</td>
+                                        <td>16 dias após início da concepção</td>
+                                        <td>2 dias</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Plano de entregas iterativos criado e revisado</td>
+                                        <td>Após primeiras estimativas criadas e revisadas </td>
+                                        <td>17 dias após início da concepção</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Criar proposta para a fase de elaboração</td>
+                                        <td>Após finalização dos entregáveis</td>
+                                        <td>14 dias após início da concepção</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Finalização dos documentos para checkpoint da concepção</td>
+                                        <td>Após finalização dos planos de entregas criados e revisados</td>
+                                        <td>18 dias após início da concepção</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Entrega da proposta para fase de elaboração</td>
+                                        <td>Após finalização dos documentos para checkpoint</td>
+                                        <td>19 dias após início da concepção</td>
+                                        <td>1 dia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Checkpoint: Revisão dos documentos como um todo e decisão final se o projeto terá continuidade</td>
+                                        <td>Após entrega da proposta para fase de elaboração</td>
+                                        <td>21 dias após início da concepção</td>
+                                        <td>2 dias</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Conclusão da concepção do projeto</td>
+                                        <td>Após checkpoint</td>
+                                        <td>21 dias após início da concepção</td>
+                                        <td></td>   
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+
+                        <p>Serão gerados os seguintes entregáveis nesta fase:</p>
+                    <center>    
+                        <table border="2" style="margin-right: 2%">
+                                <thead style="background-color:lightsteelblue">
+                                    <th><center>Artefato</center></th>
+                                    <th><center>Entregável</center></th>
+                                    <th><center>Responsável</center></th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Modelo de negócio</td>
+                                        <td>Glossário</td>
+                                        <td>Analista de negócios</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="4">Conjunto de requerimentos</td>
+                                        <td>Visão do projeto</td>
+                                        <td>Analista de negócios</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Especificações dos casos de uso</td>
+                                        <td>Analista de negócios, Especialista de requerimentos</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Especificações suplementares</td>
+                                        <td>Arquiteto</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Modelo de caso de uso</td>
+                                        <td>Arquiteto</td>
+                                    </tr>
+                                    <tr>
+                                            <td rowspan="6">Gerenciamento</td>
+                                            <td>Plano de iterações preliminar</td>
+                                            <td>Gerente de projeto</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Plano do projeto</td>
+                                        <td>Gerente de projeto</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cronograma do processo</td>
+                                        <td>Gerente de projeto</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lista de riscos</td>
+                                        <td>Gerente de projeto</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Avaliação das iterações preliminares</td>
+                                        <td>Gerente de projeto</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Plano de gerenciamento de configuração</td>
+                                        <td>Gerente de projeto, Especialista de requerimentos
+                                                </td>
+                                    </tr>
+                                </tbody>
+                        </table></center>                  
+                    </div>
+
+                    <br/>
+                    <div id="menuCriterioConcep" class="hideDiv">                        
+                            <p>
+                                <H2><center><img id="imgCriterioConcep" src="img/remove.png" style="margin-left: 2%;margin-right: 1%;margin-bottom: 2%;margin-top: 1.5%;width: 20px;"><b>3. Critério de avaliação</b></center></H2>
+                            </p>
+                         </div>
+                        <br/>
+                    
+                    <div id="CriterioConcep">
+                        <p>O objetivo da iteração preliminar é definir o sistema com o nível necessário de detalhe para que possa ser feito um julgamento sólido sobre a viabilidade do projeto.
+                                Ao final da iteração, uma revisão do caso de negócio definirá se o projeto terá continuidade ou se não será viável a implementação do mesmo.
+                                </p>
+                    </div>
+                </div>
+                <div id="elaboracao" style="display:none; margin-left: 2%;margin-top: 3%;">
+                   <p><center><h1>Plano de iterações - Elaboração</h1></center></p>
+                   <hr/>
+                   <br/>
+                   <div id="menuIntroducaoElaboracao" class="hideDiv">                        
+                            <p>
+                                <H2><center><img id="imgIntroducaoElaboracao" src="img/remove.png" style="margin-left: 2%;margin-right: 1%;margin-bottom: 2%;margin-top: 1.5%;width: 20px;"><b>1. Introdução</b></center></H2>
+                            </p>
+                    </div>
+                        <br/>
+                    <div id="IntroducaoElaboracao">
+                        <p><h3>1.1.	Propósito</h3></p>
+                        <p>
+                                Este documento descreve detalhadamente os planos para esta fase de elaboração.  Durante essa fase será definida a arquitetura do sistema e o plano de execução de alto nível do projeto será refinado.
+                        </p>
+                        <p><h3>1.2.	Escopo</h3></p>
+
+                        <p>Este documento desenvolvido se aplica ao desenvolvimento de um software com fluxo de entrada de pedidos e saída de produtos. O gerente de projeto e a equipe de desenvolvimento se baseará nesse documento ao longo do processo de desenvolvimento do sistema.</p>
+                    </div>
+                    <br/>
+                    <div id="menuPlanoElaboracao" class="hideDiv">                        
+                            <p>
+                                <H2><center><img id="imgPlanoElaboracao" src="img/remove.png" style="margin-left: 2%;margin-right: 1%;margin-bottom: 2%;margin-top: 1.5%;width: 20px;"><b>2. Plano</b></center></H2>
+                            </p>
+                    </div>
+                        <br/>
+                    <div id="PlanoElaboracao">
+                        <p>A fase de elaboração irá terminar a análise dos requisitos, além disso todos os casos de usos serão modelados e analisados. Por final um protótipo da arquitetura será desenvolvido para provar a viabilidade e performance da arquitetura para o primeiro release.</p>  
+                        <center>    
+                                <table border="2" style="margin-right: 2%">
+                                    <thead style="background-color:lightsteelblue">
+                                        <th><center>Atividade</center></th>
+                                        <th><center>Início</center></th>
+                                        <th><center>Fim</center></th>
+                                        <th><center>Duração</center></th>                                        
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Elaboração</td>
+                                            <td>Após fase de concepção</td>
+                                            <td>30 dias após término da concepção</td>
+                                            <td>30 dias</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Fase inicial de elaboração</td>
+                                            <td>Após fase de concepção</td>
+                                            <td>1 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Definir ferramentas de desenvolvimento (criação de tarefas);</td>
+                                            <td>Após término da atividade inicial de elaboração</td>
+                                            <td>3 dias após início da elaboração</td>
+                                            <td>2 dias</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Planejamento da reunião para início da elaboração</td>
+                                            <td>Após término da atividade de definição de ferramentas   </td>
+                                            <td>5 dias após início da elaboração</td>
+                                            <td>2 dias</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Reunião de início</td>
+                                            <td>Após término da atividade de Planejamento da reunião para início da elaboração</td>
+                                            <td>6 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Plano para garantia de qualidade, criado e revisado.</td>
+                                            <td>Após planejamento da reunião para início da elaboração</td>
+                                            <td>6 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Protótipos de interface com o usuário e padrões de estilo   </td>
+                                            <td>    Após término da reunião inicial</td>
+                                            <td>9 dias após início da elaboração do projeto</td>
+                                            <td>3 dias</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Componentes Web criados (agilidade no desenvolvimento)</td>
+                                            <td>Após término da reunião inicial</td>
+                                            <td>7 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Protótipo de interface com usuário inicial criado e revisado        </td>
+                                            <td>Após término da reunião inicial</td>
+                                            <td>7 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Protótipo inicial de estilos criado e revisado </td>
+                                            <td>Após término da reunião inicial</td>
+                                            <td>7 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Atualização do backlog do projeto</td>
+                                            <td>Após término da reunião inicial</td>
+                                            <td>9 dias após início da elaboração</td>
+                                            <td>3 dias</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Finalização dos protótipos de interface e estilos</td>
+                                            <td>Após atualização do backlog do projeto</td>
+                                            <td>10 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Coleta de requisitos para documentação e manuais de treinamento</td>
+                                            <td>Após finalização dos protótipos de interface e estilos</td>
+                                            <td>12 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Esboço da documentação e manuais de treinamento</td>
+                                            <td>Após coleta de requisitos para documentação e manuais de treinamento</td>
+                                            <td>13 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Detalhar requisitos de desenvolvimento</td>
+                                            <td>    Após esboço da documentação e manuais de treinamento</td>
+                                            <td>15 dias após início da elaboração</td>
+                                            <td>2 dias</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Completar elaboração do modelo de caso de uso</td>
+                                            <td>Após esboço da documentação e manuais de treinamento</td>
+                                            <td>14 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Especificações suplementares</td>
+                                            <td>Após esboço da documentação e manuais de treinamento</td>
+                                            <td>14 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Reavaliação dos documentos gerados na fase anterior (Vocabulário, plano de conteúdo, ...)</td>
+                                            <td>Após esboço da documentação e manuais de treinamento</td>
+                                            <td>14 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Detalhamento do protótipo de interface</td>
+                                            <td>Após esboço da documentação e manuais de treinamento</td>
+                                            <td>14 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Manuais de utilização criados e revisados</td>
+                                            <td>Após especificações suplementares</td>
+                                            <td>15 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Revisão de documentos (Plano de entregas iterativos, plano de desenvolvimento, caso de caso de negócio)</td>
+                                            <td>Após manuais de utilização criados e revisados</td>
+                                            <td>16 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Checkpoint da elaboração</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Preparação e execução da reunião de checkpoint de requerimentos da elaboração</td>
+                                            <td>Revisão de documentos (Plano de entregas iterativos, plano de desenvolvimento, caso de caso de negócio)</td>
+                                            <td>18 dias após início da elaboração</td>
+                                            <td>2 dias</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Fazer com que a equipe inteira finalize as tarefas para release </td>
+                                            <td>Após Preparação e execução da reunião de checkpoint de requerimentos da elaboração</td>
+                                            <td>19 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Revisão dos documentos como um todo e decisão final se o projeto terá continuidade para checkpoint</td>
+                                            <td>Após Preparação e execução da reunião de checkpoint de requerimentos da elaboração</td>
+                                            <td>19 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Revisões técnicas</td>
+                                            <td>Após checkpoint</td>
+                                            <td>20 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Definir convenções do modelo</td>
+                                            <td>Após revisões técnicas</td>
+                                            <td>21 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Identificar conceitos chave</td>
+                                            <td>Após definir convenções do modelo</td>
+                                            <td>22 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Criar execuções dos casos de uso</td>
+                                            <td>Após Identificar conceitos chave</td>
+                                            <td>22 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Revisão geral dos resultados</td>
+                                            <td>Após execuções dos casos de uso</td>
+                                            <td>24 dias após início da elaboração</td>
+                                            <td>2 dias</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Análise geral da arquitetura</td>
+                                            <td>Após revisão geral dos resultados</td>
+                                            <td>26 dias após início da elaboração</td>
+                                            <td>2 dias</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Checkpoint: Arquitetura modelada</td>
+                                            <td>Após análise geral da arquitetura</td>
+                                            <td>27 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Fase final da elaboração</td>
+                                            <td>Após checkpoint</td>
+                                            <td>29 dias após início da elaboração</td>
+                                            <td>2 dias</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Reunião para garantia da qualidade</td>
+                                            <td>Após checkpoint</td>
+                                            <td>28 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Aplicar informações coletadas em reunião</td>
+                                            <td>Após reunião para garantia da qualidade</td>
+                                            <td>29 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Revisão geral de documentos</td>
+                                            <td>Após reunião para garantia da qualidade</td>
+                                            <td>29 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Fase de elaboração completa</td>
+                                            <td>Após revisão geral de documentos</td>
+                                            <td>30 dias após início da elaboração</td>
+                                            <td>1 dia</td>                                          
+                                        </tr>
+                                    </tbody>
+                               </table>
+                        </center>
+                        <br/>
+                        <p>
+                        Serão gerados os seguintes entregáveis nesta fase:
+                        </p>
+                        <center>    
+                                <table border="2" style="margin-right: 2%">
+                                    <thead style="background-color:lightsteelblue">
+                                        <th><center>Artefato</center></th>
+                                        <th><center>Entregável</center></th>
+                                        <th><center>Responsável</center></th>                                   
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Conjunto de requerimentos</td>
+                                            <td>Protótipo de interface com usuário</td>
+                                            <td>Designer de telas</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="4">Gerenciamento</td>
+                                            <td>Plano de iterações</td>
+                                            <td>Gerente de projeto</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Avaliação do status do projeto</td>
+                                            <td>Gerente de projeto</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Avaliação das iterações</td>
+                                            <td>Gerente de projeto</td>
+                                        </tr>
+                                        <tr><td>Plano de testes</td><td>Gerente de projeto</td></tr>
+                                        <tr>
+                                            <td rowspan="2">Guias</td>
+                                            <td>Guias de modelo </td>
+                                            <td>Arquiteto</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Guias para usuário</td>
+                                            <td>Designer de telas</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="3">Modelagem</td>
+                                            <td>Análise do modelo</td>
+                                            <td>Arquiteto</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Modelo</td>
+                                            <td>Arquiteto</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Documento da arquitetura do software</td>
+                                            <td>Arquiteto</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="5">Implementação</td>
+                                            <td>Plano de integração</td>
+                                            <td>Gerente de projeto</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Protótipo de arquitetura (base do projeto)</td>
+                                            <td>Arquiteto</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Programas de testes, scripts</td>
+                                            <td>Testador</td>
+                                        </tr>
+                                        <tr><td>Procedimento de testes</td><td>Testador</td></tr>
+                                        <tr>
+                                            <td>Relatório de avaliação dos testes</td>
+                                            <Td>Gerente de projeto</Td>
+                                        </tr>
+                                    </tbody>
+                                 </table>
+
+                    </div>
+
+
+                    <br/>
+                    <div id="menuCriterioElaboracao" class="hideDiv">                        
+                            <p>
+                                <H2><center><img id="imgCriterioElaboracao" src="img/remove.png" style="margin-left: 2%;margin-right: 1%;margin-bottom: 2%;margin-top: 1.5%;width: 20px;"><b>3. Critério de avaliação</b></center></H2>
+                            </p>
+                    </div>
+                    <br/>
+                    <div id="CriterioElaboracao">
+                        <p>O objetivo principal é completar a análise e modelagem dos casos de usos selecionados anteriormente e partir deles desenvolver um protótipo funcional da arquitetura do software.</p>
+                        <p> A associação de riscos relacionadas a modelagem da arquitetura ou performance será realizada ao fim desta fase.        Cada documento entregável será revisado e estará sujeito a aprovação por toda a equipe.</p>
+                        <p>Todas as partes envolvidas no projeto irão revisar os protótipos de interface e arquitetura.</p>
+                    </div>
+                </div>
+                <div id="construcao" style="display:none; margin-left: 2%;margin-top: 3%;">
+                        <p><center><h1>Plano de iterações - Construção</h1></center></p>
+                        <hr/>
+                        <br/>
+                        <div id="menuIntroducaoConstrucao" class="hideDiv">                        
+                                <p>
+                                    <H2><center><img id="imgIntroducaoConstrucao" src="img/remove.png" style="margin-left: 2%;margin-right: 1%;margin-bottom: 2%;margin-top: 1.5%;width: 20px;"><b>1. Introdução</b></center></H2>
+                                </p>
+                             </div>
+                            <br/>
+                        <div id="IntroducaoConstrucao">
+                            <p><h3>1.1.	Propósito</h3></p>
+                            <p>Este plano de iteração descreve detalhadamente os planos para a fase de construção. Durante essa iteração apenas os quatro casos de uso mais importantes serão desenvolvidos.</p>
+                            <p><h3>1.2.	Escopo</h3></p>
+                            <p>Este documento desenvolvido se aplica a fase de construção do desenvolvimento de um software com fluxo de entrada de pedidos e saída de produtos. O gerente de projeto e a equipe de desenvolvimento se baseará nesse documento ao longo do processo de desenvolvimento do sistema.</p>
+    
+                         </div>
+                         <br/>
+                         <div id="menuPlanoConstrucao" class="hideDiv">                        
+                                <p>
+                                    <H2><center><img id="imgPlanoConstrucao" src="img/remove.png" style="margin-left: 2%;margin-right: 1%;margin-bottom: 2%;margin-top: 1.5%;width: 20px;"><b>2. Plano</b></center></H2>
+                                </p>
+                             </div>
+                            <br/>
+                        <div id="PlanoConstrucao">
+                            <p>A fase de construção irá de fato implementar os quatro casos de uso de maior importância para o projeto.</p>
+                            <center>    
+                                    <table border="2" style="margin-right: 2%">
+                                        <thead style="background-color:lightsteelblue">
+                                            <th><center>Atividade</center></th>
+                                            <th><center>Início</center></th>
+                                            <th><center>Fim</center></th>
+                                            <th><center>Duração</center></th>                                        
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Fase inicial de construção </td>
+                                                <td>Após fase de elaboração</td>
+                                                <td>30 dias após término da concepção  </td>
+                                                <td>23 dias</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Reunir toda a equipe e fazer reunião para início da fase de construção</td>
+                                                <td>Após fase de elaboração</td>
+                                                <td>1 dia após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Revisões técnicas</td>
+                                                <td>Após reunião de início da fase de construção</td>
+                                                <td>2 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Plano e casos de testes para próxima iteração criados e revisados</td>
+                                                <td>Após reunião de início da fase de construção</td>
+                                                <td>2 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Plano de integração criado e revisado</td>
+                                                <td>Após reunião de início da fase de construção</td>
+                                                <td>2 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Descrição do plano de construção para esta iteração, incluindo milestones, criado e revisado</td>
+                                                <td>Após reunião de início da fase de construção</td>
+                                                <td>2 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Atualização do plano de testes e refinamento dos casos de testes com foco na iteração atual</td>
+                                                <td>Após reunião de início da fase de construção</td>
+                                                <td>1 dias após início da construção do projeto</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Criar ambiente de teste e uma build do projeto para iteração atual</td>
+                                                <td>Após reunião de início da fase de construção</td>
+                                                <td>1 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Codificação do caso de uso de cadastro de funcionários</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Refinamento da arquitetura e do banco de dados com foco na iteração atual</td>
+                                                <td>Após criar ambiente de teste e uma build do projeto para iteração atual</td>
+                                                <td>2 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>    Desenvolver código, pesquisa por bugs e ferramentas de desenvolvimento</td>
+                                                <td>Após refinamento da arquitetura e do banco de dados</td>
+                                                <td>6 dias após início da construção</td>
+                                                <td>4 dias</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Teste unitário </td>
+                                                <td>Após desenvolver código, pesquisa por bugs e ferramentas de desenvolvimento</td>
+                                                <td>7 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Codificação do caso de uso de cadastro de produtos</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Refinamento da arquitetura e do banco de dados com foco na iteração atual</td>
+                                                <td>Após Teste unitário da iteração passada</td>
+                                                <td>2 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Desenvolver código, pesquisa por bugs e ferramentas de desenvolvimento</td>
+                                                <td>Após refinamento da arquitetura e do banco de dados</td>
+                                                <td>6 dias após início da construção</td>
+                                                <td>4 dias</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Teste unitário </td>
+                                                <td>Após desenvolver código, pesquisa por bugs e ferramentas de desenvolvimento</td>
+                                                <td>7 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Codificação do caso de uso de recebimento de pedidos</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Refinamento da arquitetura e do banco de dados com foco na iteração atual</td>
+                                                <td>Após Teste unitário da iteração passada</td>
+                                                <td>8 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Desenvolver código, pesquisa por bugs e ferramentas de desenvolvimento</td>
+                                                <td>Após refinamento da arquitetura e do banco de dados </td>
+                                                <td>12 dias após início da construção</td>
+                                                <td>4 dias</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Teste unitário </td>
+                                                <td>Após desenvolver código, pesquisa por bugs e ferramentas de desenvolvimento</td>
+                                                <td>13 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Codificação do caso de uso de pagamento de pedido</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Refinamento da arquitetura e do banco de dados com foco na iteração atual</td>
+                                                <td>Após Teste unitário da iteração passada</td>
+                                                <td>8 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Desenvolver código, pesquisa por bugs e ferramentas de desenvolvimento</td>
+                                                <td>Após refinamento da arquitetura e do banco de dados</td>
+                                                <td>12 dias após início da construção</td>
+                                                <td>4 dias</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Teste unitário </td>
+                                                <td>Após desenvolver código, pesquisa por bugs e ferramentas de desenvolvimento</td>
+                                                <td>13 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Teste de integração</td>
+                                                <td>Após Teste unitário da iteração passada</td>
+                                                <td>15 dias após início da construção</td>
+                                                <td>2 dias</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Teste de regressão</td>
+                                                <td>Após revisões técnicas</td>
+                                                <td>16 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Integração com o sistema</td>
+                                                <td>Após Teste de integração</td>
+                                                <td>16 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Documentar problemas</td>
+                                                <td>Após integração com o sistema</td>
+                                                <td>17 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Atualização em manuais de usuário e obter aprovações</td>
+                                                <td>Após documentar problemas</td>
+                                                <td>18 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Instalação para aceitação do usuário</td>
+                                                <td>Após atualização em manuais de usuário e obter aprovações</td>
+                                                <td>19 dias após início da construção   </td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Checkpoint: reunião de apresentação do software ao usuário</td>
+                                                <td>Após Instalação para aceitação do usuário</td>
+                                                <td>20 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Teste de aceitação do usuário</td>
+                                                <td>Após checkpoint</td>
+                                                <td>21 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Release</td>
+                                                <td>Após Teste de aceitação do usuário</td>
+                                                <td>22 dias após início da construção</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Reunião para garantia da qualidade</td>
+                                                <td>Após checkpoint</td>
+                                                <td>22 dias após início da elaboração</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Aplicar informações coletadas em reunião</td>
+                                                <td>Após reunião para garantia da qualidade</td>
+                                                <td>23 dias após início da elaboração</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Revisão geral de documentos</td>
+                                                <td>Após reunião para garantia da qualidade</td>
+                                                <td>23 dias após início da elaboração</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Fase de construção completa</td>
+                                                <td>Após revisão geral de documentos</td>
+                                                <td>23 dias após início da elaboração</td>
+                                                <td>1 dia</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </center>    
+                          <br/>
+                          <p>Serão gerados os seguintes entregáveis nesta fase:</p>
+                          <br/>
+                          <center>    
+                                 <table border="2" style="margin-right: 2%">
+                                     <thead style="background-color:lightsteelblue">
+                                         <th><center>Artefato</center></th>
+                                         <th><center>Entregável</center></th>
+                                         <th><center>Responsável</center></th>                                         
+                                     </thead>
+                                     <tbody>
+                                         <tr>
+                                             <td rowspan="4">Gerenciamento</td>
+                                             <td>Plano de iterações</td>
+                                             <td>Gerente de projeto</td>
+                                         </tr>
+                                         <tr>
+                                             <td>Avaliação do status do projeto</td>
+                                             <Td>Gerente de projeto</Td>
+                                         </tr>
+                                         <tr>
+                                             <td>Avaliação das iterações</td>
+                                             <td>Gerente de projeto</td>
+                                         </tr>
+                                         <tr>
+                                             <td>Plano de testes</td>
+                                             <td>Gerente de projeto</td>
+                                         </tr>
+                                         <tr>
+                                             <td>Modelagem</td>
+                                             <td>Modelo implementado</td>
+                                             <td>Arquiteto</td>
+                                         </tr>
+                                         <tr>
+                                             <td rowspan="5">Implementação</td>
+                                             <td>Plano de integração</td>
+                                             <td>Gerente de projeto</td>
+                                         </tr>
+                                         <tr>
+                                             <td>Programas de testes, scripts</td>
+                                             <td>Testador</td>
+                                         </tr>
+                                         <tr>
+                                             <td>Procedimento de testes  </td>
+                                             <td>Testador</td>
+                                         </tr>
+                                         <tr>
+                                             <td>Relatório de avaliação dos testes</td>
+                                             <td>Gerente de projeto</td>
+                                         </tr>
+                                         <tr>
+                                             <Td>Componentes</Td>
+                                             <td>Desenvolvedor</td>
+                                         </tr>
+                                     </tbody>
+                                 </table>
+                         </center>
+                         </div>
+                        <br/>
+                        <div id="menuCriterioConstrucao" class="hideDiv">                        
+                                <p>
+                                    <H2><center><img id="imgCriterioConstrucao" src="img/remove.png" style="margin-left: 2%;margin-right: 1%;margin-bottom: 2%;margin-top: 1.5%;width: 20px;"><b>3. Critério de avaliação</b></center></H2>
+                                </p>
+                             </div>
+                            <br/>
+                        <div id="CriterioConstrucao">
+                                <p>O objetivo principal é implementar com sucesso todos os casos de uso selecionados para essa iteração.
+                            Cada documento entregável será revisado e estará sujeito a aprovação por toda a equipe.
+                             Planos de teste formais servirão de base para avaliação do sucesso dessa iteração.</p>
+                                
+                        </div>
+
+                </div>
+                <div id="transicao" style="display:none; margin-left: 2%;margin-top: 3%;">
+                        <p><center><h1>Plano de iterações - Transição</h1></center></p>
+                        <hr/>
+                        <br/>
+                        <div id="menuIntroducaoTransicao" class="hideDiv">                        
+                                <p>
+                                    <H2><center><img id="imgIntroducaoTransicao" src="img/remove.png" style="margin-left: 2%;margin-right: 1%;margin-bottom: 2%;margin-top: 1.5%;width: 20px;"><b>1. Introdução</b></center></H2>
+                                </p>
+                             </div>
+                            <br/>
+                        <div id="IntroducaoTransicao">
+                            <p><h3>1.1.	Propósito</h3></p>
+                            <p>Este plano de iteração descreve detalhadamente os planos para a fase de transição. Essa fase tem como objetivo especificar os planos de manutenção e suporte do software desenvolvido..</p>
+                            <p><h3>1.2.	Escopo</h3></p>
+                            <p>Este documento desenvolvido se aplica a fase de transição do desenvolvimento de um software com fluxo de entrada de pedidos e saída de produtos. O gerente de projeto e a equipe de desenvolvimento se baseará nesse documento ao longo do processo de desenvolvimento do sistema.</p>
+    
+                         </div>
+                         <br/>
+                         <div id="menuPlanoTransicao" class="hideDiv">                        
+                                <p>
+                                    <H2><center><img id="imgPlanoTransicao" src="img/remove.png" style="margin-left: 2%;margin-right: 1%;margin-bottom: 2%;margin-top: 1.5%;width: 20px;"><b>2. Plano</b></center></H2>
+                                </p>
+                             </div>
+                            <br/>
+                        <div id="PlanoTransicao">
+                            <p>A fase de transição irá preparar a equipe para prestar suporte e manter o bom funcionamento do sistema desenvolvido.</p>
+                            <center>    
+                                    <table border="2" style="margin-right: 2%">
+                                        <thead style="background-color:lightsteelblue">
+                                            <th><center>Atividade</center></th>
+                                            <th><center>Início</center></th>
+                                            <th><center>Fim</center></th>
+                                            <th><center>Duração</center></th>                                        
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Reunião inicial da fase de transição</td>
+                                                <td>Após fase de construção</td>
+                                                <td>9 dias após início da transição</td>
+                                                <td>9 dias</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Compartilhar procedimentos, checklist revisado</td>
+                                                <td>Após reunião de início da fase de transição</td>
+                                                <td>1 dias após início da transição</td>
+                                                <td>1 dia</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Compartilhar plano de contingência e disaster recovery, revisado    </td>
+                                                <td>Após reunião de início da fase de transição </td>
+                                                <td>1 dias após início da transição</td>
+                                                <td>1 dia</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Treinar equipes </td>
+                                                <td>Após reunião de início da fase de transição</td>
+                                                <td>1 dias após início da transição</td>
+                                                <td>1 dia</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Preparar ambiente para suporte, internet, dados, integração com legado.</td>
+                                                <td>Após treinar equipes</td>
+                                                <td>2 dias após início da transição </td>
+                                                <td>1 dia</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Teste de funcionalidade</td>
+                                                <td>Após preparar ambiente para suporte, internet, dados, integração com legado.</td>
+                                                <td>3 dias após início da transição do projeto</td>
+                                                <td>1 dia</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Teste de performance</td>
+                                                <td>Após teste de funcionalidade</td>
+                                                <td>4 dias após início da transição</td>
+                                                <td>1 dia</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Teste de inicialização</td>
+                                                <td>Após teste de performance</td>
+                                                <td>5 dias após início da transição</td>
+                                                <td>1 dia</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Leves modificações para melhoria de performance</td>
+                                                <td>Após teste de inicialização </td>
+                                                <td>6 dias após início da transição</td>
+                                                <td>1 dia</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Teste de aceitação do usuário</td>
+                                                <td>Após leves modificações para melhoria de performance</td>
+                                                <td>7 dias após início da transição</td>
+                                                <td>1 dia</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Treinamento para área de negócios</td>
+                                                <td>Após teste de aceitação do usuário</td>
+                                                <td>8 dias após início da transição</td>
+                                                <td>1 dia</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Revisão dos manuais de operação</td>
+                                                <td>Após teste de aceitação do usuário</td>
+                                                <td>8 dias após início da transição</td>
+                                                <td>1 dia</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Reunião para garantia da qualidade</td>
+                                                <td>Após revisão dos manuais de operação</td>
+                                                <td>9 dias após início da transição</td>
+                                                <td>1 dia</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Revisão do checklist e verificar se tudo foi executado</td>
+                                                <td>Após reunião para garantia da qualidade</td>
+                                                <td>9 dias após início da transição</td>
+                                                <td>1 dia    </td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Fase de construção completa</td>
+                                                <td>Após revisão geral de documentos</td>
+                                                <td>9 dias após início da transição</td>
+                                                <td>1 dia</td>                                                
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </center>
+                            <br/>
+                        <p>
+                        Serão gerados os seguintes entregáveis nesta fase:
+                        </p>
+                        <center>    
+                                <table border="2" style="margin-right: 2%">
+                                    <thead style="background-color:lightsteelblue">
+                                        <th><center>Artefato</center></th>
+                                        <th><center>Entregável</center></th>
+                                        <th><center>Responsável</center></th>                                   
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="3">Gerenciamento</td>
+                                            <td>Plano de iterações</td>
+                                            <td>Gerente de projeto</td>
+                                        </tr>
+                                        <Tr>
+                                            <td>Avaliação do status do projeto</td>
+                                            <td>Gerente de projeto</td>
+                                        </Tr>
+                                        <tr><td>Avaliação das iterações</td><td>Gerente de projeto</td></tr>
+                                        <tr><td>Implementação</td><td>Relatório de avaliação dos testes</td><td>Gerente de projeto</td></tr>
+                                    </tbody>
+                                </table>
+                        </center>
+
+                    </div>
+                    <br/>
+                    <div id="menuCriterioTransicao" class="hideDiv">                        
+                            <p>
+                                <H2><center><img id="imgCriterioTransicao" src="img/remove.png" style="margin-left: 2%;margin-right: 1%;margin-bottom: 2%;margin-top: 1.5%;width: 20px;"><b>3. Critério de avaliação</b></center></H2>
+                            </p>
+                         </div>
+                        <br/>
+                    <div id="CriterioTransicao">
+                            <p>O objetivo principal é tornar a equipe capaz de prestar um bom serviço e manter o software em funcionamento.</p>
+                            <p>O sucesso será mensurado através da aceitação do usuário final e avaliação de operações.</p>
+                            
+                    </div>
+                </div>
+            </div>
+            <div id="divpt2" style="display:none; margin-left: 2%;">
+                 <h4><span class="badge badge-secondary">Parte 2</span></h4><br/>
+                    <div id="menuPraticasXP" class="hideDiv">                        
+                        <p>
+                            <H2><center><img id="imgXP" src="img/remove.png" style="margin-left: 2%;margin-right: 1%;margin-bottom: 2%;margin-top: 1.5%;width: 20px;"><b>Plano de Práticas do XP – 3 práticas adotadas</b></center></H2>
+                        </p>
+                     </div>
+                    <br/>
+                    <div id="praticasXP">
+                    <p>
+                        <b>1. Testes</b>
+                    </p>
+                    <p>Os testes serão utilizados pois com eles os programadores conseguem saber exatamente o que o sistema deve e não deve fazer e, além disso, como são feitos antes da programação, também funcionam como especificação do projeto. Nos testes o cliente possui uma participação ativa pois é a partir das informações passadas por ele que os testes serão elaborados. </p>
+                    <p>Os testes são do tipo TDD, Test-Driven Design, onde os testes são elaborados antes da construção do software e o desenvolvedor programa e executa os testes quase que simultaneamente, eliminando aquele processo de desenvolvimento onde primeiro se programa e depois o programador passa para outro membro da equipe testar.</p>
+                    <p>Os TDDs são testes automatizados, o que diminui o trabalho de “testar na mão” todas as funcionalidades, fazendo com que o programador consiga executar os testes a qualquer momento para testar todas as funcionalidades do sistema e checar se a mudança que está realizando gerou um bug ou não. Também serão utilizados os testes unitários que são uma forma de testes automatizados, porém testam apenas classes e não funcionalidades por inteiro.</p>
+                    <br/>
+                    <p>
+                        <b>2. Propriedade Coletiva</b>
+                    </p>
+                    <p>A Propriedade Coletiva consiste em disseminar conhecimento do código à toda equipe, evitando que apenas um programador conheça determinada parte do software.</p>
+                    <p>O princípio de Propriedade Coletiva será utilizado como um artefato de proteção ao projeto pois com ele é possível garantir que todos os programadores conheçam todo o sistema e são capazes de atuar em demandas de qualquer parte do software. Assim, é possível evitar grandes transtornos que podem ser causados com eventuais saídas/entradas de programadores na equipe.</p>
+                    <br/>
+                    <p>
+                        <b>3. Reunião diária</b>
+                    </p>
+                    
+                    <p>A reunião diária é imprescindível para o ecossistema da equipe do projeto. Nela os membros do projeto se reúnem diariamente por um curto período de tempo e compartilham as atividades que estão executando, seus impedimentos, conquistas e preocupações. Assim todos da equipe ficam cientes das atividades e progresso de todos, o que evita grandes surpresas no projeto.</p>
+                    <p>Com as reuniões diárias é possível ter uma visão melhor do andamento do projeto e identificar necessidades como priorizações, mudanças no escopo, necessidade de contratações de novos funcionários e etc.</p>
+                    
+                 </div>
+                 <hr/>
+                 <br/>
+                 <div id="menuAvaliacaoManifesto" class="hideDiv">                        
+                        <p>
+                            <H2><center><img id="imgManifesto" src="img/remove.png" style="margin-left: 2%;margin-right: 1%;margin-bottom: 2%;margin-top: 1.5%;width: 20px;"><b>Avaliação dos itens de acordo com Manifesto Ágil</b></center></H2>
+                        </p>
+                     </div>
+                    <br/>
+                 <div id="avaliacaoManifesto">
+                        <p>
+                            <b>a. Indivíduos e interações em vez de processos e ferramentas </b>
+                        </p>
+                        <p>Todo software é construído por pessoas e, portanto, o indivíduo deve ser valorizado. É necessário construir projetos baseados em indivíduos com ambiente, suporte e condições de trabalho adequadas. </p>
+                        <p>A confiança é outro item importantíssimo. Os membros da equipe devem se sentir seguros, capazes e amparados ao fazer parte do desenvolvimento do sistema. Os processos e ferramentas são bem-vindos, porém não é ideal que sejam muito burocráticos, o ideal é que sejam simples e úteis. Portanto todos os processos e ferramentas devem ser constantemente revisados e sempre que possível, simplificados.</p>
+                        <br/>
+
+                        <p>
+                            <b>b. Software funcional em vez de documentação abrangente</b>
+                        </p>
+                        <p>É natural que exista a necessidade de uma documentação do projeto, porém ela deve ser simples e a equipe não deve gastar muita energia no processo de documentação pois, o que realmente importa para o cliente é o software em si, e um software funcional é um software funcionando concretamente, que satisfaz o cliente, com entregas constantes e valor agregado.</p>
+                        <br/>
+                        <p>
+                            <b>c. Colaboração do cliente em vez de negociação do contrato</b>
+                        </p>
+                        <p>Colaboração é a palavra chave para o relacionamento com o cliente, ambos, empresa contratada e contratante devem trabalhar em conjunto, um sempre visando o progresso do outro. Esse tipo de relação é muito saudável e intensifica a confiança entre as empresas, pois ambos trabalham como uma única equipe com um objetivo. Os contratos devem existir, porém não devem ser impeditivos para ajudar os clientes a conseguir cada vez mais vantagens competitivas.</p>
+                        <br/>
+                        <p>
+                            <b>d. Respostas às mudanças em vez de seguir um plano</b>
+                        </p>
+                        <p>Ter um plano é importante, porém ele deve ser flexível e ir se adaptando de acordo com as necessidades do cliente. A cultura de que mudanças, mesmo que pedidas tardiamente no desenvolvimento do projeto, são ruins deve ser eliminada. As mudanças são importantes e são oportunidades de fazer com que sua própria empresa e a do cliente se desenvolva cada vez mais. Portanto os projetos devem ser flexíveis e capazes de aceitar realizar mudanças no escopo do projeto, sempre visando gerar maior valor agregado do sistema para o cliente.</p>
+                 </div>    
+             </div>
+             <div id="divpt3" style="display:none; margin-left: 2%;">
+                    <h4><span class="badge badge-secondary">Parte 3</span></h4><br/>   
+                    <div id="menuJustificativa" class="hideDiv">                        
+                        <p>
+                            <H2><center><img id="imgJustificativa" src="img/remove.png" style="margin-left: 2%;margin-right: 1%;margin-bottom: 2%;margin-top: 1.5%;width: 20px;"><b>Justificativa de Negócio</b></center></H2>
+                        </p>
+                     </div>
+                    <br/>
+                    <div id="JustificativaNegocio">
+                        <p>
+                            <b>Custo/benefício</b>
+                        </p> 
+                        <p>A elaboração de software voltando ao atendimento de negócios com fluxo de entrada de pedidos e saída de produto é um ramo com muita variedade de implantações e com poucos competidores fortes no mercado, como um pet-shop, pizzarias, restaurantes, etc. A utilização de um software de controle de entrada e saída traz ao comercio uma maior chance de m crescimento ascendente.</p>
+                        <p>Com relação ao custo benefícios, a utilização de um software igual ao proposto é de suma importância já que como software é possível atender a um nicho maior de pessoas, amenizando a restrição restrições geográficas e de transporte. Com a criação de uma aplicação para uso mobile e web trata maior visibilidade ao negócio, trazendo benefícios como agilidade de recebimento de pedidos, divulgação do negócio, controle FIFO e outros mais. </p>
+                        
+                        <p>
+                            <b>Ponto de equilíbrio</b>
+                        </p> 
+                        <p>Partindo do princípio que o software esta sendo implementado em novo negócio, a utilização do mesmo trará muitos benefícios de pronta entrega, um deles é a facilitação e maior controle do negócio, com isso, o break even é uma meta que será atingida rapidamente.  Com maior controle destinado ao software fazer esses controles, seu negócio precisará de menos pessoas pensando em atender clientes, anotar pedidos e ter uma ralação frequente de atendimento ao consumidor.  </p>
+                        <p>Com o trabalho de receber pedidos destinado ao software, a quantidade de esforços pode ser maior alocada para recursos mais críticos, como fazer o que foi pedido pelo consumidor, trazendo assim maior velocidade de atendimento e finalização do pedido, trazendo feed-backs para o consumidor dos estados de se pedido, no caso de um petshop, quando seu cachorro começa a ser atendido, quando ele começa a tomar banho, e por fim quando ele está pronto. </p>
+
+
+                        <p>
+                            <b>Causa/efeito</b>
+                        </p> 
+                        <p>Sabendo o principal problema do negócio, isso pode ser solucionado pela implementação de m software, delimitando e conhecendo muito bem o problema, soluciona-lo via software é uma questão de tempo, descobrindo a raiz do problema e solucionando-o etapa por etapa com o auxilio do software trará maior valor para seu negócio. </p>
+
+                        <p>
+                            <b>Cadeia de valor</b>
+                        </p> 
+                        <p>A integração proporcionada pelo software pode ser desde uma pequena e simples parte do sistema, até uma integração completa, de ponto a ponto, integrando desde o fornecedor de matéria prima até o revendedor ou consumidor final. A integração pode proporcionar a inteligente compra de matéria prima, identificando o melhor valor de venda no mercado e também proporcionando o melhor custo de venda de seu produto.</p>
+                        <p>Diminuindo custos fixos, isso trará maior competitividade de mercado, fazendo assim um negócio mais competitivo e com maior lucro.</p>
+
+                        <p>
+                            <b>Oportunidade de investimento</b>
+                        </p> 
+                        <p>Como mencionado anteriormente, a oportunidade de investimento no ramo de software voltado à entrada e saída de pedidos é muito favorável, já que não existem grandes competidores para esse ramo. Entrando no mercado com um software bem consolidado e flexível as diversas aplicações possíveis, a chance de consolidação desse tipo de software é promissora.</p>
+
+                        <p>
+                            <b>Pareto</b>
+                        </p> 
+                        <p>Sabe-se que cerca de 20% são as funcionalidades mais importantes e serão utilizadas durante toda a vida útil do software (importante ressaltar que cerca de 45% dessas funcionalidades nunca serão utilizadas). O ideal é separar quais são essas tarefas mais importantes e iniciar o desenvolvimento por elas (começando pela mais importante delas). Existem diversas vantagens em fazer isso</p>
+                        <p><ul>
+                            <li>O software é entregue velozmente, partindo do princípio que reduzimos o que não é necessário, e estamos trabalhando apenas no que é estritamente necessário</li>
+                            <li>O cliente tem mais tempo hábil para validar se realmente o sistema resolve seu problema</li>
+                            <li>Aplicando um modelo de escopo aberto/negociável, existem chances muito altas de que o software seja entregue com alta qualidade funcional (faz o que realmente deve fazer)</li>
+                            <li>Partindo do mais importante, provavelmente o cliente perceberá que muitas das funcionalidades realmente não eram necessárias</li>
+                            <li>O cliente pode utilizar/rentabilizar o software com poucos dias ou semana de desenvolvimento</li>
+                            <li>O cliente ficará mais satisfeito com a eficiência e qualidade das entregas</li>
+                        </ul></p>
+                        <p>
+                            <b>Payback</b>
+                        </p> 
+                        <p>O tempo de retorno desde o investimento inicial até aquele momento em que os rendimentos acumulados tornam-se iguais ao valor do investimento inicial. Este indicador fornece ao gerente a estimativa de quanto tempo vai levar (meses ou anos) até que ele recupere a aplicação/investimento inicial.</p>
+                        <p>O PayBack é também visto como um indicador de risco de projeto por isso todo plano de projeto ou novo negócio deve ter como prioridade, minimizar seu PayBack e é importante ressaltar que o PayBack está relacionado a outros indicadores.</p>
+                        <p>Para calcular o PayBack, é preciso entender o que é fluxo de caixa – pois será a partir do fluxo de caixa que você vai calcular o tempo para o investimento retornar. Fazer o fluxo de caixa significa que você vai controlar, equilibrar e destinar com qualidade tudo que entra e sai de valores da sua organização.</p>
+                        
+                    </div>     
+                    <hr/>
+                    <br/> 
+                    <div id="menuConclusao" class="hideDiv">                        
+                            <p>
+                                <H2><center><img id="imgConclusao" src="img/remove.png" style="margin-left: 2%;margin-right: 1%;margin-bottom: 2%;margin-top: 1.5%;width: 20px;"><b>Conclusão</b></center></H2>
+                            </p>
+                    </div>
+                        <br/>
+                    <div id="Conclusao">
+                        <p>O RUP em muitos aspectos tem uma metodologia bem parecida com processos ágeis, mas ele se difere de processos ágeis em vários pontos. O RUP acabara forçando de certa forma um número grande de artefatos ao longo de seu processo e isso o diferencia de metodologias ágeis que costumam empregar a modelagem ágil com seu princípio de documentar apenas quando for necessário se comunicar mais especificamente.</p> 
+                        <p>As metodologias ágeis têm em suas iterações todas as etapas (Análise, Planejamento, Modelagem, Desenvolvimento e Teste), ou seja, as iterações são processos completos que resultarão em requisitos funcionando. No RUP, em cada iteração serão aplicadas disciplinas que corresponderão a essas etapas descritas acima, porém, o nível de aplicação depende do enfoque da fase que a iteração está ocorrendo. No caso do RUP, na fase de Elaboração, disciplinas relacionadas a modelagem aparecerão com maior aplicação nas iterações, mas essa mesma disciplina não tem grande aplicação nas iterações da fase de Transição.</p>
+                        <p>Em questão ao escopo, nas metodologias ágeis, o escopo não é definido previamente ou por completo em uma fase qualquer. No RUP, há um grande foco na definição do escopo na primeira fase da metodologia, que é a fase de Concepção. Apesar do RUP pregar a realimentação de informações ao longo do processo para refinar os requisitos ao longo do processo, a fase de Concepção traz um foco maior a definição do prévio do escopo, que foge das características de uma metodologia ágil.</p>
+                        <p>Não é difícil abordar o RUP como se fosse uma metodologia ágil, em vários pontos essas duas metodologias tem coisas em comum, mas em pontos como os citados acima, é possível perceber há diferença entre essas duas visões de como abordar um desenvolvimento de software, tendo que decidir pela qual usar, dependendo muito de qual tipo de software será construído e qual será seu tamanho.</p>
+                    </div>   
+              </div>
+            <div id="divvideos" style="display:none; margin-left: 2%;">
+                <h4><span class="badge badge-secondary">Vídeos</span></h4><br/>
+                <p><center><h1>Parte 1</h1></center></p>
+               <center> 
+                   <video width="640" height="480" controls>
+                    <source src="video/gustavo1.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video><br/>
+                  <video width="640" height="480" controls>
+                   <source src="video/gustavo2.mp4" type="video/mp4">
+                 </video>
+                </center>
+                <br/>
+                <p><center><h1>Parte 2</h1></center></p>
+                <center> 
+                    <video width="640" height="480" controls>
+                     <source src="video/maria1.mp4" type="video/mp4">
+                   </video><br/>
+                   <video width="640" height="480" controls>
+                    <source src="video/maria2.mp4" type="video/mp4">
+                  </video>
+                 </center>
+                 <br/>
+                 <p><center><h1>Parte 3</h1></center></p>
+                 <center> 
+                     <video width="640" height="480" controls>
+                      <source src="video/matheus1Audio.mp3" type="video/mp4">
+                    </video><br/>
+                    <video width="640" height="480" controls>
+                     <source src="video/matheus2Audio.mp3" type="video/mp4">
+                   </video><br/>
+                   <video width="640" height="480" controls>
+                    <source src="video/matheus3Audio.mp3" type="video/mp4">
+                  </video>
+                  </center>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <br/>
+        <div style="color: #21252996">
+            <span>
+                <center>
+                 <p> 
+                  Gustavo Antonio Ferreira - 081160005 | Maria de Fátima Rocha Silveira - 081160042 | Matheus Augusto Maria  - 081160017
+                 </p>
+                    Faculdade de Tecnologia Termomecanica
+                </center>
+                <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/hanan" title="Hanan">Hanan</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+            </span>
+        </div>
+    </footer>
+</html>
